@@ -1,0 +1,14 @@
+spring:
+  thymeleaf:
+    suffix: .html
+    mode: html
+    enabled: true
+    cache: false
+    check-template-location: true
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+      additional-paths: src/main/java #重启目录
+      exclude: src/main/resources
+server:
+  port: 8080

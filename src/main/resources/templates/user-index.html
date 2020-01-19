@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>个人中心-我的简历</title>
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<link rel="stylesheet"  href="/user/css/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/user/css/prettyPhoto.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/user/css/print.css" type="text/css" media="print" />
+</head>
+<body>
+
+<div id="wrapper">
+	<!-- 基本信息-start -->
+	<div>
+		<div style="float: left;">
+			<h2 id="titleName" class="sectionHead">基本信息</h2>
+		</div>
+		<div style="float: right;margin-top: 18px;">
+<!--			<a href="javascript:;" data-width="800px" data-height="370px" data-url="/user"-->
+<!--				data-title="修改基本信息" onclick="showPage(this)">编辑</a>-->
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="base-info" id="base-info" >
+		<div class="base-l">
+			<p>
+				<label class="smallInput">姓 名：</label>
+				<label class="smallInput" id="l_realName" th:text="${user.realName}">张 三</label>
+				<br /><br />
+			</p>
+			<p>
+				<label class="smallInput">民 族：</label>
+				<label class="smallInput" id="l_nation" th:text="${user.nation}">汉族</label>
+				<br /><br />
+			</p>
+			<p>
+				<label class="smallInput">电 话：</label>
+				<label class="smallInput" id="l_tel" th:text="${user.tel}">18685854789</label>
+				<br /><br />
+			</p>
+			<p>
+				<label class="smallInput">邮 箱：</label>
+				<label class="smallInput" id="l_email" th:text="${user.email}">xx20510@163.com</label>
+				<br /><br />
+			</p>
+			<p>
+				<label class="smallInput">住 址：</label>
+				<label class="smallInput" id="l_address" th:text="${user.address}">四川成都</label>
+				<br />
+			</p>
+		</div>
+		<div class="base-r">
+				<p>
+					<label class="smallInput">身 高： </label>
+					<label class="smallInput" id="l_stature" th:text="${user.stature}">188</label>
+					<label class="smallInput">cm</label>
+					<br /><br />
+				</p>
+				<p>
+					<label class="smallInput">学 历：</label>
+					<label class="smallInput" id="l_type" th:text="${user.education}">本科</label>
+					<br /><br />
+				</p>
+				<p>
+					<label class="smallInput">求职意向：</label>
+					<label class="smallInput" id="l_jobIntention" th:text="${user.jobIntention}">Java工程师</label>
+					<br /><br />
+				</p>
+				<p>
+					<label class="smallInput">毕业院校：</label>
+					<label class="smallInput" id="l_college" th:text="${user.college}">四川科技大学</label>
+					<br /><br />
+				</p>
+				<p>
+					<label class="smallInput">出身年月：</label>
+					<label class="smallInput" id="l_birthday" th:text="${user.birthday}">1995.03.26</label><br />
+				</p>
+			</div>
+			<div class="base-photo">
+				<img class="profile-photo" id="l_photo" src="/images/avatar.jpg" />
+			</div>
+	</div>
+	
+	<div class="clear"></div>
+	<!-- 基本信息-end -->
+	<!-- 自我介绍-start -->
+	<div>
+		<div style="float: left;">
+			<h2 id="eye" class="sectionHead">自我介绍</h2>
+		</div>
+		<div style="float: right;margin-top: 50px;">
+<!--			<a href="javascript:;" data-url="/user/introduction" data-width="650px" data-height="360px"-->
+<!--			data-title="修改自我介绍" onclick="showPage(this)">编辑</a>-->
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div>
+		<p id="introduction-div" th:text="${user.introduction}">
+			Known as "THE MOLITOR", I'm a web designer and WordPress theme developer living in the outskirts of Seattle with my wife and two kids. I'm an active author on ThemeForest where I enjoy spending my day in Photoshop converting custom designs into fancy-pants 
+		</p>
+	</div>
+	
+	<div class="clear"></div>
+	<!-- 自我介绍-end -->
+	<!-- 教育经历-start -->
+	<div>
+		<div style="float: left;">
+			<h2 id="learn" class="sectionHead">教育经历</h2>
+		</div>
+		<div style="float: right;margin-top: 50px;">
+<!--			<a href="javascript:;" data-url="/education/0" data-width="400px" data-height="460px"-->
+<!--			data-title="新增教育经历" onclick="showPage(this)">新增</a>-->
+		</div>
+	</div>
+	<div class="clear"></div>
+	<ul id="educations">
+		<li th:each="education, state:${educations}">
+			<div class="details">
+				<h3 th:text="${education.college}">四川科技大学</h3>
+				<h4 th:text="${#temporals.format(education.startDate, 'yyyy.MM') + ' - ' + #temporals.format(education.endDate, 'yyyy-MM')}">2005.9 - 2007.7</h4>
+				<h5 th:text="|${education.specialty}(${education.type})|">软件工程（本科）</h5>
+			</div>
+			<div class="edu-div" th:data-div-id="${state.index}">
+				<p class="edu-content" th:text="${education.courses}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut justo nibh, mattis sit amet consequat a, varius vitae metus. Proin pharetra sodales pellentesque.</p>
+				<p class="edu-button">
+<!--					<button class="edit-button" data-width="400px" data-height="460px"-->
+<!--							data-title="编辑教育经历" onclick="showPage(this)">编辑</button>-->
+<!--					<button   data-url="/education" class="del-button">删除</button>-->
+				</p>
+			</div>
+			<div class="clear"></div>
+		</li>
+	</ul>
+	<div class="clear"></div>
+	<!-- 教育经历-end -->
+	<!-- 工作经验-start -->
+	<div>
+		<div style="float: left;">
+			<h2 id="clock" class="sectionHead">工作经验</h2>
+		</div>
+		<div style="float: right;margin-top: 50px;">
+<!--			<a href="javascript:;" data-url="/job/0" data-width="600px" data-height="520px"-->
+<!--			data-title="新增工作经验" onclick="showPage(this)">新增</a>-->
+		</div>
+	</div>
+	<div class="clear"></div>
+	<ul id="jobs">
+		<li th:each="job, state:${jobs}">
+			<div class="details">
+				<h3 th:text="${job.company}">XXX科技有限公司</h3>
+				<h4 th:text="${#temporals.format(job.startDate, 'yyyy-MM') + ' - ' + #temporals.format(job.endDate, 'yyyy-MM')}">2005.9 - 2007.7</h4>
+				<h5 th:text="${job.position}">JAVA工程师</h5>
+			</div>
+			<div class="job-div" th:data-div-id="${state.index}">
+				<p class="job-content" th:text="${job.description}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut justo nibh, mattis sit amet consequat a, varius vitae metus. Proin pharetra sodales pellentesque.</p>
+				<p class="job-button">
+<!--					<button onclick="showPage(this)" class="edit-button"-->
+<!--					data-width="600px" data-height="520px" data-title="编辑工作经验">编辑</button>-->
+<!--					<button onclick="del(this)" data-url="/job" class="del-button">删除</button>-->
+				</p>
+			</div>
+			<div class="clear"></div>
+		</li>
+	</ul>
+	<!-- 工作经验-end -->
+	<!-- 项目经验-start -->
+	<div>
+		<div style="float: left;">
+			<h2 id="chat" class="sectionHead">项目经验</h2>
+		</div>
+		<div style="float: right;margin-top: 50px;">
+<!--			<a href="javascript:;" data-url="/project/0" data-width="600px" data-height="500px"-->
+<!--			data-title="新增项目经验" onclick="showPage(this)">新增</a>-->
+		</div>
+	</div>
+	<div class="clear"></div>
+	<ul id="project">
+		<li th:each="project, state:${projects}">
+			<div class="details">
+				<h3 th:text="${project.name}">XXX项目</h3>
+				<h4 th:text="${#temporals.format(project.startDate, 'yyyy-MM') + ' - ' + #temporals.format(project.endDate, 'yyyy-MM')}">2005.9 - 2007.7</h4>
+			</div>
+			<div class="project-div" th:data-div-id="${state.index}">
+				<p class="project-content" th:text="${project.description}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut justo nibh, mattis sit amet consequat a, varius vitae metus. Proin pharetra sodales pellentesque.</p>
+				<p class="project-button">
+<!--					<button onclick="showPage(this)"  class="edit-button"-->
+<!--					data-width="600px" data-height="500px"  data-title="编辑项目经验">编辑</button>-->
+<!--					<button data-url="/project" onclick="del(1)" class="del-button">删除</button>-->
+				</p>
+			</div>
+			<div class="clear"></div>
+		</li>
+	</ul>
+	<!-- 项目经验-end -->
+	<!-- 资格证书-start -->
+	
+	<div>
+		<div style="float: left;">
+			<h2 id="ribbon" class="sectionHead">资格证书</h2>
+		</div>
+		<div style="float: right;margin-top: 50px;">
+<!--			<a href="javascript:;" data-url="/credential" data-width="500px" data-height="230px"-->
+<!--			data-title="新增资格证书" onclick="showPage(this)">新增</a>-->
+		</div>
+	</div>
+	<div class="clear"></div>
+	<ul id="credential-list" class="honorsAwards">
+		<li th:each="credential, state:${credentials}">
+			<div class="credential-div" th:data-div-id="${state.index}">
+				<label th:text="${credential.content}" >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</label>
+				<div class="credential-button">
+<!--					<a href="javascript:;" onclick="del(this)" class="action-a"  data-url="/credential">删除</a>-->
+				</div>
+			</div>
+			<div class="clear"></div>
+		</li>
+	</ul>
+	<div class="clear"></div>
+	<!--资格证书-start -->
+	<!--技能-start -->
+	<!--技能-end -->
+</div>
+
+<div id="copyright">&copy; 2012 - Designed and developed by Templates
+</div>
+<script  src="/user/js/jquery.js"></script>
+<script  src="/user/js/prettyPhoto.js"></script>
+<script  src="/user/js/backPosition.js"></script>
+<script  src="/user/js/custom.js"></script>
+<script  src="/layer/layer.js"></script>
+<script  src="/user/js/data.js"></script>
+</body>
+</html>

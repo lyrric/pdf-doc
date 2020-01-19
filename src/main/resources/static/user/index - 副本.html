@@ -1,0 +1,390 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>个人中心-我的简历</title>
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+</head>
+<body>
+
+<!--STICKER-->
+<div id="sticker">
+	<h2 class="sectionHead" >我的简历</h2>
+</div>
+
+<div id="wrapper">
+	<!-- 基本信息-start -->
+	<div>
+		<div style="float: left;">
+			<h2 id="titleName" class="sectionHead">基本信息</h2>
+		</div>
+		<div style="float: right;margin-top: 18px;">
+			<button id="base-info-edit-btn">编辑</button>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="base-info" id="base-info" >
+		<div class="base-l">
+			<p>
+				<label class="smallInput">姓 名：</label>
+				<label class="smallInput" id="l_realName">张 三</label>
+				<br /><br />
+			</p>
+			<p>
+				<label class="smallInput">民 族：</label>
+				<label class="smallInput" id="l_nation">汉族</label>
+				<br /><br />
+			</p>
+			<p>
+				<label class="smallInput">电 话：</label>
+				<label class="smallInput" id="l_tel">18685854789</label>
+				<br /><br />
+			</p>
+			<p>
+				<label class="smallInput">邮 箱：</label>
+				<label class="smallInput" id="l_email">xx20510@163.com</label>
+				<br /><br />
+			</p>
+			<p>
+				<label class="smallInput">住 址：</label>
+				<label class="smallInput" id="l_address">四川成都</label>
+				<br />
+			</p>
+		</div>
+		<div class="base-r">
+				<p>
+					<label class="smallInput">身 高： </label>
+					<label class="smallInput" id="l_stature">188</label>
+					<label class="smallInput">cm</label>
+					<br /><br />
+				</p>
+				<p>
+					<label class="smallInput">学 历：</label>
+					<label class="smallInput" id="l_type">本科</label>
+					<br /><br />
+				</p>
+				<p>
+					<label class="smallInput">求职意向：</label>
+					<label class="smallInput" id="l_jobIntention">Java工程师</label>
+					<br /><br />
+				</p>
+				<p>
+					<label class="smallInput">毕业院校：</label>
+					<label class="smallInput" id="l_college">四川科技大学</label>
+					<br /><br />
+				</p>
+				<p>
+					<label class="smallInput">出身年月：</label>
+					<label class="smallInput" id="l_birthday">1995.03.26</label><br />
+				</p>
+			</div>
+			<div class="base-photo">
+				<img class="profile-photo" id="l_photo" src="images/default-profile-photo.jpg" />
+			</div>
+	</div>
+	<div class="base-info" id="edit-base-info-div" style="display: none;">
+		<div class="base-l">
+			<p>
+				<label class="smallInput" for="realName">姓 名：</label>
+				<input type="text" value="张三" id="realName" class="input round3"/>
+				<br /><br />
+			</p>
+			<p>
+				<label class="smallInput">民 族：</label>
+				<input type="text" value="汉族" id="nation" />
+				<br /><br />
+			</p>
+			<p>
+				<label class="smallInput">电 话：</label>
+				<input type="text" value="18608283799" id="tel" />
+				<br /><br />
+			</p>
+			<p>
+				<label class="smallInput">邮 箱：</label>
+				<input type="text" value="xx20510@163.com" id="email" />
+				<br /><br />
+			</p>
+			<p>
+				<label class="smallInput">住 址：</label>
+				<input type="text" value="四川成都" id="email" />
+				<br />
+			</p>
+		</div>
+		<div class="base-r">
+			<p>
+				<label class="smallInput">身 高：</label>
+				<input type="text" value="188" id="stature" placeholder="cm"/>
+				<br /><br />
+			</p>
+			<p>
+				<label class="smallInput">学 历：</label>
+				<select id="type">
+					<option value="本科">本科</option>
+					<option value="专科">专科</option>
+				</select>
+				<br /><br />
+			</p>
+			<p>
+				<label class="smallInput">求职意向：</label>
+				<input type="text" value="Java工程师" id="jobIntention" />
+				<br /><br />
+			</p>
+			<p>
+				<label class="smallInput">毕业院校：</label>
+				<input type="text" value="四川科技大学" id="college" />
+				<br /><br />
+			</p>
+			<p>
+				<label class="smallInput">出身年月：</label>
+				<input type="text" value="1995.03.26" id="birthday" />
+			</p>
+		</div>
+		<div class="base-photo">
+			<img class="profile-photo" id="photo" src="images/default-profile-photo.jpg" />
+			<input type="hidden" id="photo_value" />
+			<button>上传图片</button>
+		</div>
+		<div class="clear"></div>
+		<div class="common-btn">
+			<button id="base-info-save-btn">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+			<button data-show-div="base-info" data-hide-div="edit-base-info-div" onclick="editCancel(this)">取消</button>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<!-- 基本信息-end -->
+	<!-- 自我介绍-start -->
+	<div>
+		<div style="float: left;">
+			<h2 id="eye" class="sectionHead">自我介绍</h2>
+		</div>
+		<div style="float: right;margin-top: 50px;">
+			<button id="introduction-edit-btn">编辑</button>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div>
+		<div id="socialIcons" style="display: none;">
+			<a class="socialIcon" target="_blank" id="facebookIcon" href="http://themolitor.com/facebook"></a>
+			<a class="socialIcon" target="_blank" id="twitterIcon" href="http://themolitor.com/twitter"></a>
+			<a class="socialIcon" target="_blank" id="youTubeIcon" href="http://youtube.com/themolitor"></a>
+			<a class="socialIcon" target="_blank" id="gplusIcon" href="http://themolitor.com/gplus"></a>
+			<a class="socialIcon" target="_blank" id="dribbbleIcon" href="http://dribbble.com/themolitor"></a>
+			<!--MORE ICON OPTIOPS...
+			<a class="socialIcon" target="_blank" id="flickrIcon" href="#>"></a>
+			<a class="socialIcon" target="_blank" id="vimeoIcon" href="#"></a>
+			<a class="socialIcon" target="_blank" id="mySpaceIcon" href="#"></a>
+			<a class="socialIcon" target="_blank" id="rssIcon" href="#"></a>
+			-->
+		</div><!--end socialIcons-->
+
+		<!--BIO PARAGRAPH-->
+		<p id="introduction-div">	
+			Known as "THE MOLITOR", I'm a web designer and WordPress theme developer living in the outskirts of Seattle with my wife and two kids. I'm an active author on ThemeForest where I enjoy spending my day in Photoshop converting custom designs into fancy-pants 
+		</p>
+		<div id="edit-introduction-div" style="display: none;">
+			<textarea id="introduction"></textarea>
+			<div class="clear"></div>
+			<div style="margin-top: 20px;">
+				<button id="base-info-save-btn">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+				<button  data-show-div="introduction-div" data-hide-div="edit-introduction-div" onclick="editCancel(this)">取消</button>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div class="clear"></div>
+	<!-- 自我介绍-end -->
+	<!-- 教育经历-start -->
+	<div>
+		<div style="float: left;">
+			<h2 id="learn" class="sectionHead">教育经历</h2>
+		</div>
+		<div style="float: right;margin-top: 50px;">
+			<button id="education-add-btn">新增</button>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div id="edit-edu-div">
+		<input type="text" id="edu-college" />&nbsp;&nbsp;&nbsp;
+		<input type="text" id="edu-speciafy" /><br />
+		<input type="text" id="edu-start-date" />--<input type="text" id="job-end-date" /><br />
+		<textarea id="job-description">主修课程</textarea><br/>
+		<div class="common-btn" >
+			<button id="edu-save-btn">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+			<button data-show-div="education" data-hide-div="edit-edu-div" onclick="editCancel(this)">取消</button>
+		</div>
+	</div>
+	<ul id="educations">
+		<li>
+			<div class="details">
+				<h3>四川科技大学</h3>
+				<h4>2005.9 - 2007.7</h4>
+				<h5>软件工程（本科）</h5>
+			</div>
+			<div class="edu-div" data-div-id="0">
+				<p class="edu-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut justo nibh, mattis sit amet consequat a, varius vitae metus. Proin pharetra sodales pellentesque.</p>
+				<p class="edu-button">
+					<button onclick="editEdu(1)">编辑</button>
+					<button onclick="delEdu(1)">删除</button>
+				</p>
+			</div>
+		</li>
+	</ul>
+	<div class="clear"></div>
+	<!-- 教育经历-end -->
+	<!-- 工作经验-start -->
+	
+	<div>
+		<div style="float: left;">
+			<h2 id="clock" class="sectionHead">工作经验</h2>
+		</div>
+		<div style="float: right;margin-top: 50px;">
+			<button id="job-add-btn">新增</button>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div id="edit-job-div">
+		<input type="text" id="job-company" />&nbsp;&nbsp;&nbsp;
+		<input type="text" id="job-position" /><br />
+		<input type="text" id="job-start-date" />--<input type="text" id="job-end-date" /><br />
+		<textarea id="job-description">工作描述</textarea><br/>
+		<div class="common-btn" >
+			<button id="job-save-btn">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+			<button data-show-div="jobs" data-hide-div="edit-job-div" onclick="editCancel(this)">取消</button>
+		</div>
+	</div>
+	<ul id="jobs">
+		<li>
+			<div class="details">
+				<h3>XXX科技有限公司</h3>
+				<h4>2017.05-2018.04</h4>
+				<h5>JAVA工程师</h5>
+			</div>
+			<div class="job-div" data-div-id="0">
+				<p class="job-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut justo nibh, mattis sit amet consequat a, varius vitae metus. Proin pharetra sodales pellentesque.</p>
+				<p class="job-button">
+					<button onclick="editJob(1)">编辑</button>
+					<button onclick="delJob(1)">删除</button>
+				</p>
+			</div>
+		</li>
+	</ul>
+	<div class="clear"></div>
+	<!-- 工作经验-end -->
+	<!-- 项目经验-start -->
+	
+	<div>
+		<div style="float: left;">
+			<h2 id="chat" class="sectionHead">项目经验</h2>
+		</div>
+		<div style="float: right;margin-top: 50px;">
+			<button id="project-add-btn">新增</button>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div id="edit-project-div">
+		<input type="text" id="project-company" placeholder="项目名称"/>&nbsp;&nbsp;&nbsp;
+		<input type="text" id="project-start-date" />--<input type="text" id="job-end-date" /><br />
+		<textarea id="project-description">项目描述</textarea><br/>
+		<div class="common-btn" >
+			<button id="project-save-btn">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+			<button data-show-div="project" data-hide-div="edit-project-div" onclick="editCancel(this)">取消</button>
+		</div>
+	</div>
+	<ul id="project">
+		<li>
+			<div class="details">
+				<h3>XXX项目</h3>
+				<h4>2017.05-2018.04</h4>
+			</div>
+			<div class="project-div" data-div-id="0">
+				<p class="project-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut justo nibh, mattis sit amet consequat a, varius vitae metus. Proin pharetra sodales pellentesque.</p>
+				<p class="project-button">
+					<button onclick="editProject(1)">编辑</button>
+				</p>
+			</div>
+		</li>
+	</ul>
+	<div class="clear"></div>
+	<!-- 项目经验-end -->
+	<!-- 资格证书-start -->
+	
+	<div>
+		<div style="float: left;">
+			<h2 id="ribbon" class="sectionHead">资格证书</h2>
+		</div>
+		<div style="float: right;margin-top: 50px;">
+			<button id="credential-add-btn">新增</button>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div id="add-credential-div">
+		<input type="text" placeholder="描述" id="credential"/> 
+		<button >保存</button>
+		<button data-show-div="credential-list" data-hide-div="add-credential-div" onclick="editCancel(this)">取消</button>
+	</div>
+	<ul id="credential-list" class="honorsAwards">
+		<li>
+			<div class="credential-div" data-div-id="0">
+				<p class="credential-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<div class="credential-button">
+					<label>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</label>
+					<button onclick="delProject(1)">删除</button>
+				</div>
+			</div>
+		</li>
+	</ul>
+	<div class="clear"></div>
+	<!--资格证书-start -->
+	<!--技能-start -->
+	
+	<div>
+		<div style="float: left;">
+			<h2 id="tools" class="sectionHead">技能</h2>
+		</div>
+		<div style="float: right;margin-top: 50px;">
+			<button id="skill-add-btn">新增</button>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div id="edit-skill-div">
+		<input type="text" placeholder="技能类型" id="skill-title"/> 
+		<select>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+		</select>
+		<button >保存</button>
+		<button data-show-div="skills" data-hide-div="edit-skill-div" onclick="editCancel(this)">取消</button>
+	</div>
+	<ul id="skills">
+		<div class="skill-div" data-div-id="0">
+			<li class="skill-title s80" class="s80"><span>WordPress Development</span></li>
+			<div class="skill-del-btn">
+				<li class="s80" style="float: left;"><span>WordPress Development</span></li>
+				<button onclick="editSkill(1)" style="float: left;">编辑</button>
+				<button onclick="delSkill(1)" style="float: left;">删除</button>
+				<div class="clear"></div>
+			</div>
+		</div>
+		
+	</ul>
+	<div class="clear"></div>
+	<!--技能-end -->
+</div>
+
+
+<div id="copyright">&copy; 2012 - Designed and developed by THE MOLITOR. More Templates 
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/prettyPhoto.js"></script>
+<script src="js/backPosition.js"></script>
+<script src="js/data.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>
