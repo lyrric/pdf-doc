@@ -50,19 +50,9 @@ public class DocUtil {
         //渲染模板
         FileWriter writer = new FileWriter(savePath);
         engine.process("template",context, writer);
+        writer.close();
     }
 
-    public void htmlToPdf(){
-        Runtime run = Runtime.getRuntime();
-        try {
-            Process exec = run.exec("wkhtmltopdf http://velocity.apache.org/  d:/"+System.currentTimeMillis()+".pdf");
-            InputStream is = exec.getErrorStream();
-            String s = IOUtils.toString(is, StandardCharsets.UTF_8);
-            System.out.println(s);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
     /**
      * 将图片base64编码
      * @param imagePath 本地路径
